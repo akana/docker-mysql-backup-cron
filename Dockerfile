@@ -1,12 +1,9 @@
 FROM nickbreen/cron:v1.0.0
 
-MAINTAINER Nick Breen <nick@foobar.net.nz>
-MAINTAINER Daisuke Baba
-
 RUN apt-get -qqy update && \
   DEBIAN_FRONTEND=noninteractive apt-get -qqy install \
-    mysql-client apache2-utils python-dev python-pip \
-    libffi-dev libssl-dev && \
+  mysql-client apache2-utils python-dev python-pip \
+  libffi-dev libssl-dev && \
   apt-get -qqy clean && \
   pip install s3cmd python-openstackclient python-swiftclient gsutil
 
